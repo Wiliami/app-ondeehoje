@@ -304,7 +304,7 @@ nav {
 /* CARDS DE ROLÊ */
 .roles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.25rem;
 }
 .role-card {
@@ -588,15 +588,16 @@ footer {
   .nav-links a:last-child { border-bottom: none; }
 
   /* Hero */
-  .hero { padding: 72px 1.2rem 2rem; min-height: 65vh; }
-  .hero-content { max-width: 100%; }
-  .hero-logo { max-width: 300px; }
+  .hero { padding: 72px 1.2rem 2rem; min-height: 65vh; justify-content: center; }
+  .hero-content { max-width: 100%; text-align: center; }
+  .hero-logo { max-width: 300px; margin-left: auto; margin-right: auto; }
   .hero-sub { font-size: 0.95rem; max-width: 100%; }
+  .hero-btns { justify-content: center; }
   .hero-glow { width: 100%; }
   .hero-scroll { right: 1.2rem; bottom: 1.5rem; }
 
   /* Search */
-  .search-section { padding: 1.5rem 1.2rem; }
+  .search-section { padding: 1.5rem 1.2rem; position: sticky; top: 60px; z-index: 90; }
 
   /* Categorias */
   .categorias { padding: 1.5rem 1.2rem 1rem; }
@@ -606,7 +607,7 @@ footer {
   .section-header { margin-bottom: 1.2rem; }
 
   /* Roles Grid */
-  .roles-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.9rem; }
+  .roles-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.9rem; }
 
   /* Valores */
   .valores-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
@@ -636,15 +637,17 @@ footer {
   .btn-entrar { font-size: 0.72rem !important; padding: 5px 12px !important; }
 
   .hero { min-height: 58vh; padding: 68px 1rem 1.8rem; }
-  .hero-logo { max-width: 240px; }
+  .hero-logo { max-width: 240px; margin-left: auto; margin-right: auto; }
   .hero-badge { font-size: 0.62rem; padding: 4px 10px; }
   .hero-sub { font-size: 0.88rem; }
   .hero-btns { flex-direction: column; gap: 0.7rem; }
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 13px 20px; }
 
-  .search-section { padding: 1.2rem 1rem; }
+  .search-section { padding: 1.2rem 1rem; top: 60px; }
   .search-bar { padding: 11px 14px; gap: 8px; }
   .search-bar input { font-size: 0.85rem; }
+  .search-filter-text { display: none; }
+  .search-filter { gap: 0; }
 
   .categorias { padding: 1.2rem 1rem 0.8rem; }
   .section { padding: 1.8rem 1rem; }
