@@ -6,6 +6,7 @@ const roles = [
     emoji: '🍻',
     bg: 'linear-gradient(135deg, #1a2e1a, #0d1a0d)',
     emojiColor: '#39FF14',
+    image: '/balcao.jpg',
     badge: 'Aberto agora',
     name: 'Balcão 360',
     tipo: 'Bar',
@@ -18,6 +19,7 @@ const roles = [
     id: 2,
     emoji: '🎶',
     bg: 'linear-gradient(135deg, #1f0d0d, #2e1a0d)',
+    image: '/bar.jpg',
     badge: 'Aberto agora',
     name: 'Estação 96',
     tipo: 'Bar',
@@ -105,12 +107,16 @@ function RoleCard({ role }) {
 
   return (
     <div className="role-card">
-      <div
-        className="role-card-img-placeholder"
-        style={{ background: role.bg, color: role.emojiColor || 'inherit', fontSize: '2.5rem' }}
-      >
-        {role.emoji}
-      </div>
+      {role.image ? (
+        <img className="role-card-img" src={role.image} alt={role.name} />
+      ) : (
+        <div
+          className="role-card-img-placeholder"
+          style={{ background: role.bg, color: role.emojiColor || 'inherit', fontSize: '2.5rem' }}
+        >
+          {role.emoji}
+        </div>
+      )}
       <div className="role-card-overlay"></div>
       <div className="role-card-badge">
         <div className="dot"></div>
