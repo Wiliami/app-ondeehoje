@@ -1,4 +1,8 @@
+import { useState } from 'react'
+
 export default function Nav() {
+  const [menuAberto, setMenuAberto] = useState(false)
+
   return (
     <nav>
       <a href="#" className="nav-logo">
@@ -14,17 +18,24 @@ export default function Nav() {
           <span>Santarém</span>
         </div>
       </a>
-      <div className="nav-links">
-        <a href="#" className="ativo">Início</a>
-        <a href="#">Eventos</a>
-        <a href="#">Locais</a>
-        <a href="#">Mapa</a>
-        <a href="#">Blog</a>
+      <div className={`nav-links${menuAberto ? ' open' : ''}`}>
+        <a href="#" className="ativo" onClick={() => setMenuAberto(false)}>Início</a>
+        <a href="#" onClick={() => setMenuAberto(false)}>Eventos</a>
+        <a href="#" onClick={() => setMenuAberto(false)}>Locais</a>
+        <a href="#" onClick={() => setMenuAberto(false)}>Mapa</a>
+        <a href="#" onClick={() => setMenuAberto(false)}>Blog</a>
       </div>
       <div className="nav-actions">
         <button title="Buscar">🔍</button>
         <button title="Notificações">🔔</button>
         <button className="btn-entrar">Entrar</button>
+        <button
+          className={`nav-hamburger${menuAberto ? ' open' : ''}`}
+          onClick={() => setMenuAberto(!menuAberto)}
+          aria-label="Menu"
+        >
+          <span /><span /><span />
+        </button>
       </div>
     </nav>
   )
